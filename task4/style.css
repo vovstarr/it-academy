@@ -1,0 +1,30 @@
+p {
+    padding: 100px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.left {
+    background: url('all2.png') repeat-y;
+}
+.right {
+    background: url('all2.png') repeat-y right;
+}
+.top {
+    background: url('all.png') repeat-x;
+}
+.bottom {
+    background: url('all.png') repeat-x bottom;
+}
+.ugol1 {
+    background: url('ugol1.png') no-repeat;
+}
+.ugol2 {
+    background: url('ugol2.png') no-repeat left bottom;
+}
+.ugol3 {
+    background: url('ugol3.png') no-repeat right top;
+}
+.ugol4 {
+    background: url('ugol4.png') no-repeat right bottom;
+}
