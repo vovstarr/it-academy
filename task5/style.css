@@ -1,0 +1,93 @@
+table {
+    
+    width: 100%;
+    box-sizing: border-box;
+}
+
+table .header, table .footer{
+    background-color: rgba(100, 148, 237, 0.521);
+    text-transform: uppercase;
+    color: blue;
+    height: 60px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+table .aside {
+     width: 300px;
+     background-color: burlywood;
+     padding: 20px;
+ }
+ 
+ table img {
+    padding-right: 20px;
+    width: 200px;
+    float: left;
+}
+
+table p {
+    display: inline;
+}
+
+table .content h1 {
+    text-align: center;
+}
+
+table .content {
+    padding: 20px;
+    background: url(2.png) repeat-y right;
+    background-size: 50px;
+    
+}
+
+.wrapper .header, .footer{
+    background-color: rgba(100, 148, 237, 0.521);
+    text-transform: uppercase;
+    color: blue;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+div .aside {
+    
+    width: 300px;
+    background-color: burlywood;
+    padding: 20px;
+    float: left;
+    margin-right: 20px;
+    
+}
+
+div .content {
+    padding: 20px;
+    margin-left: 300px;    
+}
+
+div .main {
+    min-height: 400px;
+    background: url(2.png) repeat-y right;
+    background-size: 50px;
+}
+
+div img {
+    padding-right: 20px;
+    width: 200px;
+    float: left;
+}
+
+div p {
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+div .content h1 {
+    text-align: center;
+}
+
+div .footer {
+    clear: both;
+}
