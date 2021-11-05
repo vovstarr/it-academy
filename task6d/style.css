@@ -1,3 +1,7 @@
+.stars{
+	transform: scaleX(-1);
+	position: fixed;
+}
 .stars > input {
 	display: none;
 }
