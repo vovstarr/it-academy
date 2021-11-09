@@ -1,0 +1,16 @@
+.stars{
+	transform: scaleX(-1);
+	position: fixed;
+}
+.stars > input {
+	display: none;
+}
+
+.stars > label:before {
+  font-size: 100px;
+	content: '★';
+}
+
+.stars > input:checked ~ label {
+	color: rgb(199, 23, 23);
+}
