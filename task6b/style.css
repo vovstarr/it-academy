@@ -1,0 +1,27 @@
+table {
+    border-collapse: collapse;
+}
+
+td{
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+}
+
+tr:nth-child(even) td:nth-child(odd) {
+    background: black;
+}	
+
+tr:nth-child(odd) td:nth-child(even) {
+    background: black;
+}
+
+table.chess tr:first-of-type td, table.chess tr:last-of-type td{
+    height: 25px;
+    background: rgb(17, 202, 110);
+}
+
+table.chess td:first-of-type, table.chess td:last-of-type{
+    width: 25px;
+    background: rgb(17, 202, 110);
+}
