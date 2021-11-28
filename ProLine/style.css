@@ -1,5 +1,4 @@
 /* Общее */
-
 /* * {
     outline: 1px solid red;
 } */
@@ -17,9 +16,11 @@ body {
 a {
     text-decoration: none; 
 }
+
 a, h1 {
     font-family: 'Alumni Sans', sans-serif;
 }
+
 div, p {
     font-family: 'Kanit', sans-serif;
 }
@@ -125,6 +126,7 @@ nav a:hover {
     justify-content: space-around;
     align-items: center;
     position: relative;
+    margin-bottom: 40px;
 }
 
 .feature div {
@@ -185,10 +187,11 @@ nav a:hover {
 .childmenu {
     display: flex;
     align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
     border: 1px solid rgba(110, 110, 110, 0.322);
     padding: 10px;
     margin: 10px;
-    box-sizing: border-box;
 }
 
 .textmenu {
@@ -237,6 +240,7 @@ nav a:hover {
     padding: 0px 20px;
     font-size: 18px;
 }
+
 .companytext p:first-of-type {
     font-size: 40px;
     margin: 0;
@@ -262,6 +266,16 @@ nav a:hover {
     cursor: pointer;
 }
 
+.visionNoactive{
+    width: 50%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    border-right: 1px solid rgba(128, 128, 128, 0.514);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.514);
+    background-color: rgba(219, 219, 219, 0.795);
+}
+
 .mission {
     border-left: 1px solid rgba(128, 128, 128, 0.514);
     border-bottom: 1px solid rgba(128, 128, 128, 0.514);
@@ -272,8 +286,20 @@ nav a:hover {
     cursor: pointer;
 }
 
+.missionActive{
+    width: 50%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
 .companytext2 {
     padding: 10px 40px;
+}
+
+.companytext3 {
+    padding: 10px 40px;
+    display: none;
 }
 
 .companyright p {
@@ -371,7 +397,7 @@ footer {
     }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 965px) {
     .company {
         display: flex;
         flex-direction: column;
@@ -384,7 +410,7 @@ footer {
     }
 }
 
-@media (max-width: 934px) {
+@media (max-width: 985px) {
     .feature { 
         flex-wrap: wrap;
         height: 100%;
@@ -397,7 +423,7 @@ footer {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 929px) {
     .menu {
         display: flex;
         flex-wrap: wrap;
@@ -468,27 +494,6 @@ footer {
     }
 }
 
-@media (max-width: 499px){
-    .video_body {
-        font-size: 20px;
-    }
-    .textv {
-        font-size: 13px;
-    }
-    .textv2 {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 480px) {
-    .piccontact {
-        height: 200px;
-    }
-    .contactright p {
-        max-width: 300px;
-    }
-}
-
 @media (max-width: 599px) {
     header {
         min-width: 300px;
@@ -524,5 +529,26 @@ footer {
     }
     .pic {
         height: 80px;
+    }
+}
+
+@media (max-width: 499px){
+    .video_body {
+        font-size: 20px;
+    }
+    .textv {
+        font-size: 13px;
+    }
+    .textv2 {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .piccontact {
+        height: 200px;
+    }
+    .contactright p {
+        max-width: 300px;
     }
 }
