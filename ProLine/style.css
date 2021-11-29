@@ -55,8 +55,8 @@ nav {
 }
 
 nav a{
-    height: 45px;
-    line-height: 47px;
+    height: 44px;
+    line-height: 48px;
     padding-left: 15px;
     padding-right: 15px;
     color: black;
@@ -99,7 +99,7 @@ nav a:hover {
     font-size: 30px;
 }
 
-.titlev, .textv{
+.titlev, .textv, .textv2{
     cursor: pointer;
 }
 
@@ -126,7 +126,7 @@ nav a:hover {
     justify-content: space-around;
     align-items: center;
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .feature div {
@@ -152,16 +152,20 @@ nav a:hover {
 }
 /* Актив */
 .activ {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.activ div {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-image: url(activities.jpg);
     background-position: top;
     background-repeat: no-repeat;
-    height: 150px;
-    min-width: 310px;
+    height: 170px;
+    min-width: 300px;
     width: 100%;
-
     font-size: 36px;
     color: white;
     position: relative;
@@ -508,8 +512,8 @@ footer {
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    .activ {
-        height: 120px;
+    .activ div{
+        height: 150px;
         font-size: 30px;
     }
     .feature div {
