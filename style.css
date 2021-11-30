@@ -160,7 +160,7 @@ nav a:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-image: url(/ProLine/activities.jpg);
+    background-image: url(./ProLine/activities.jpg);
     background-position: top;
     background-repeat: no-repeat;
     height: 170px;
