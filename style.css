@@ -1,0 +1,558 @@
+/* Общее */
+/* * {
+    outline: 1px solid red;
+} */
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none; 
+}
+
+a, h1 {
+    font-family: 'Alumni Sans', sans-serif;
+}
+
+div, p {
+    font-family: 'Kanit', sans-serif;
+}
+/* Шапка */
+header {
+    min-width: 320px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+header h1 {
+    cursor: pointer;
+}
+
+.logo {
+    height: 40px;
+    padding-right: 10px;
+}
+/* Навигация */
+nav {
+    min-width: 320px;
+    border-top: 1px solid rgba(110, 110, 110, 0.322);
+    border-bottom: 1px solid rgba(110, 110, 110, 0.322);
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+}
+
+nav a{
+    height: 44px;
+    line-height: 48px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: black;
+}
+
+nav a:hover {
+    background-color: rgba(245, 245, 245, 0.87);
+    color: rgb(48, 132, 228); 
+}
+/* Видик */
+.blockvideo {
+    min-width: 320px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.video {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+}
+
+.video_body {
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgba(255, 255, 255, 0.884);
+    min-width: 320px;
+    width: 100%;
+    font-size: 30px;
+}
+
+.titlev, .textv, .textv2{
+    cursor: pointer;
+}
+
+.textv {
+    padding-top: 30px;
+    font-size: 18px;
+}
+
+.textv2 {
+    padding-top: 7px;
+    font-size: 18px;
+}
+
+.video_media {
+    position: relative;
+    min-width: 320px;
+    width: 100%;
+}
+/* раздел с 2 пикчами */
+.feature {
+    min-width: 320px;
+    height: 330px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.feature div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.feature div p:first-of-type {
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+.feature p + p {
+    padding-left: 30px;
+    font-size: 18px;
+}
+
+.pic {
+    height: 80px;
+    padding: 10px;
+}
+/* Актив */
+.activ {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.activ div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url(./ProLine/activities.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 170px;
+    min-width: 300px;
+    width: 100%;
+    font-size: 36px;
+    color: white;
+    position: relative;
+    cursor: pointer;
+}
+/* 4 картинки */
+.menu {
+    min-width: 320px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.menu a{
+    font-size: 20px;
+    color: rgb(48, 132, 228);
+}
+
+.topmenu, .botmenu {
+    display: flex;
+    flex-direction: row;
+}
+
+.childmenu {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    border: 1px solid rgba(110, 110, 110, 0.322);
+    padding: 10px;
+    margin: 10px;
+}
+
+.textmenu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 18px;
+}
+/* О компании */
+.our {
+    min-width: 320px;
+}
+
+.company {
+    display: flex;
+    flex-direction: row;
+}
+
+.companyleft {
+    display: flex;
+}
+
+.readme {
+    margin-left: auto;
+    padding-bottom: 20px;
+}
+
+.readme button {
+    padding: 10px 25px;
+    background-color: rgba(255, 255, 255, 0.767);
+    border: 1px solid rgba(110, 110, 110, 0.322);
+    cursor: pointer;
+}
+
+.companyright {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid rgba(110, 110, 110, 0.322);
+}
+
+.companytext {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+    font-size: 18px;
+}
+
+.companytext p:first-of-type {
+    font-size: 40px;
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+.piccompany {
+    height: 400px;
+}
+
+.vm {
+    display: flex;
+    height: 50px;
+    font-size: 30px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.vision {
+    width: 50%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.visionNoactive{
+    width: 50%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    border-right: 1px solid rgba(128, 128, 128, 0.514);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.514);
+    background-color: rgba(219, 219, 219, 0.795);
+}
+
+.mission {
+    border-left: 1px solid rgba(128, 128, 128, 0.514);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.514);
+    background-color: rgba(219, 219, 219, 0.795);
+    width: 50%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.missionActive{
+    width: 50%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.companytext2 {
+    padding: 10px 40px;
+}
+
+.companytext3 {
+    padding: 10px 40px;
+    display: none;
+}
+
+.companyright p {
+    padding-top: 5px;
+    padding-bottom: 15px;
+    margin: 0;
+}
+/* Контакты */
+.contact {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    min-width: 320px;
+}
+
+.us {
+    display: flex;
+    justify-content: space-between;
+}
+
+.positionleft {
+    max-width: 900px;
+    width: 100%;
+}
+
+.contactleft {
+    display: flex;
+    flex-direction: column;
+    font-size: 50px;
+    height: 100%;
+    align-items: flex-end;
+    padding-right: 150px;
+}
+
+.Contact_Us {
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+.contacttext {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    width: 100%;
+}
+
+.contactleft input {
+    padding: 10px 25px;
+    margin-bottom: 15px;
+}
+
+.send {
+    margin-left: auto;
+}
+
+.send button {
+    padding: 10px 25px;
+    background-color: rgba(255, 255, 255, 0.767);
+    border: 1px solid rgba(110, 110, 110, 0.322);
+    cursor: pointer;
+}
+
+.contactright {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.piccontact {
+    height: 400px;
+    padding-bottom: 10px;
+}
+/* Концовка */
+footer {
+    font-size: 10px;
+    padding: 10px;
+}
+
+@media (max-width: 1000px) {
+    .us {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contactleft {
+        display: flex;
+        flex-direction: column;
+        font-size: 50px;
+        height: 100%;
+        align-items: center;
+        padding-right: 0;
+        padding-bottom: 50px;
+    }
+}
+
+@media (max-width: 965px) {
+    .company {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .companyleft {
+        padding-bottom: 50px;
+    }
+}
+
+@media (max-width: 985px) {
+    .feature { 
+        flex-wrap: wrap;
+        height: 100%;
+    }
+    .feature div {
+        flex-direction: column;
+    }
+    .pic {
+        height: 70px;
+    }
+}
+
+@media (max-width: 929px) {
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        min-width: 300px;
+        height: 100%;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    .childmenu{
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+        margin: none;
+        max-width: 450px;
+    }
+    .topmenu, .botmenu {
+        align-content: normal;
+    }
+    .textmenu {
+        align-items: center;
+        padding: none;
+    }
+    .picmenu {
+        position: relative;
+        height: 180px;
+
+    }
+}
+
+@media (max-width: 699px) {
+    .companyleft {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+    .companyright {
+        max-width: 300px;
+    }
+    .companytext {
+        align-items: center;
+    }
+    .piccompany {
+        height: 300px;
+    }
+}
+
+@media (max-width: 630px) {
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .topmenu, .botmenu {
+        flex-direction: column;
+    }
+
+    .contactright {
+        min-width: 320px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .piccontact {
+        height: 300px;
+    }
+    .contactright p {
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 599px) {
+    header {
+        min-width: 300px;
+    }
+    nav {
+        min-width: 300;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 25px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .activ div{
+        height: 150px;
+        font-size: 30px;
+    }
+    .feature div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column
+    }
+    .feature p:first-of-type {
+        font-size: 18px;
+    }
+    .feature p + p {
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 18px;
+    }
+    .pic {
+        height: 80px;
+    }
+}
+
+@media (max-width: 499px){
+    .video_body {
+        font-size: 20px;
+    }
+    .textv {
+        font-size: 13px;
+    }
+    .textv2 {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .piccontact {
+        height: 200px;
+    }
+    .contactright p {
+        max-width: 300px;
+    }
+}
