@@ -1,0 +1,1173 @@
+/* * {
+    outline: 1px solid red;
+} */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none; 
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    margin: 0px;
+}
+
+nav a:hover {
+    background-color: #ffc61a;
+    border-radius: 20px;
+    color: black;
+}
+/* Шапка */
+.burger {
+    display: none;
+}
+
+header {
+    min-width: 320px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    background-image: url(./Taxi/fon1.png);
+    background-position: top;
+}
+
+.topheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo img {
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.logo p {
+    margin: 0px;
+    padding-top: 5px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+nav {
+    min-width: 320px;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 15px;
+    font-weight: bold;
+}
+
+nav a {
+    padding: 10px;
+}
+
+.tel {
+    min-width: 320px;
+    padding: 35px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tel p {
+    margin: 0px;
+    color: #ffc61a;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.tel a {
+    padding-top: 5px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.car {
+    min-width: 320px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+}
+
+.car img {
+    height: 400px;
+}
+/* Секция С Заказом Такси */
+.booking {
+    min-width: 320px;
+    height: 470px;
+    background-color: #ffc61a;
+    display: flex;
+    justify-content: center;
+}
+
+.booking .left {
+    width: 500px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 45px;
+}
+
+.booking .left p {
+    margin: 0px;
+    padding-bottom: 15px;
+    white-space: pre-wrap;
+}
+
+.booking .topleft {
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.booking .topleft p:last-of-type {
+    font-size: 40px;
+}
+
+.booking .left .push {
+    margin-right: auto;
+    font-size: 20px;
+    height: 40px;
+}
+
+.booking .push button {
+    padding: 10px 40px;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.booking .right {
+    width: 500px;
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightblock {
+    width: 300px;
+    height: 300px;
+    margin-top: 50px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 10px black;
+}
+
+.booking .book {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 25px;
+    white-space: pre-wrap;
+}
+
+.booking .rightblock .top, .booking .rightblock .centre1, .booking .rightblock .centre2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 6px;
+}
+
+.booking .rightblock p {
+    font-size: 18px;
+    padding: 5px 0px;
+    border-bottom: 1px solid black;
+    color: rgba(110, 110, 110, 0.664);
+    width: 40%;
+}
+
+.booking .rightblock .bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.booking .rightblock .bottom p {
+    width: 90%;
+}
+
+.sub {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    height: 40px;
+    margin-top: auto;
+    padding-bottom: 13px;
+}
+
+.sub button {
+    padding: 10px 100px;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 17px;
+}
+/* Секция Тариф */
+.tariffs {
+     min-width: 320px;
+     height: 550px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     padding: 30px 0px;
+}
+
+.tariffs .text {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.grid {
+    display: grid;
+    align-items: center;
+    height: 500px;
+    grid-template-columns: 350px 350px 350px;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.card {
+    height: 350px;
+    padding: 50px;
+    background: #36363618;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+}
+
+.card_title {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.pricing {
+    font-weight: normal;
+    font-size: 70px;
+    margin: 0;
+    padding: 18px 0px;
+}
+
+li {
+    padding-bottom: 20px;
+}
+
+a.cta_btn {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    background: rgb(21, 23, 24);
+    border-radius: 29px;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.card:hover {
+    background: #ffc61a;
+    box-shadow: 1px 1px 20px 1px black;
+}
+/* Секция Бест*/
+.best {
+    min-width: 320px;
+    height: 550px;
+    background-image: url(./Taxi/fon2.png);
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.best .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.best .text p {
+    padding-bottom: 10px;
+    font-size: 25px;
+    color: #ffc61a;
+    font-weight: bold;
+}
+
+.best .text p:first-of-type {
+    font-size: 20px;
+    color: white;
+}
+
+.best img {
+    height: 27px;
+    background-color: #ffc61a;
+    border-radius: 25px 25px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.best .centre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.best .top {
+    display: flex;
+    justify-content: center;
+    padding: 25px 40px;
+}
+
+.best .bottom {
+    display: flex;
+    justify-content: center;
+    padding: 25px 40px;
+}
+
+.home, .fast, .bonus, .gps {
+    width: 48%;
+    display: flex;
+    align-items: center;
+}
+
+.text1 {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.best .push{
+    padding-top: 30px;
+    margin-bottom: auto;
+}
+
+.best .push button {
+    padding: 10px 40px;
+    color: black;
+    background-color: #ffc61a;
+    border: 1px solid #ffc61a;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.text1 p:first-of-type {
+    font-size: 20px;
+    padding-bottom: 15px;
+    color: #ffc61a;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.text1 p:last-of-type {
+    font-size: 18px;
+    white-space: pre-wrap;
+}
+/* Секция Скачать */
+.download {
+    padding-top: 40px;
+    min-width: 320px;
+    height: 465px;
+}
+
+.download .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.download .top p:last-of-type {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.download .box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.download .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.download .text {
+    padding: 30px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.download .text p:last-of-type {
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+.download .right img {
+    height: 402px;
+} 
+
+.download .img {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.download .img img {
+    cursor: pointer;
+}
+/* Секция Клиент */
+.client {
+    min-width: 320px;
+    height: 470px;
+    background-image: url(./Taxi/fon3.png);
+}
+
+.client .top {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffc61a;
+    padding-top: 70px;
+}
+
+.client .top p:last-of-type {
+    font-size: 35px;
+    color: white;
+}
+
+.client .bottom {
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.client .left, .client .right {
+    height: 180px;
+    width: 400px;
+    color: white;
+    background-color: black;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.client .right div:first-of-type, .client .left div:first-of-type {
+    padding: 20px;
+}
+
+.client .text {
+    width: 100%;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.client .name {
+    font-size: 25px;
+    color: #ffc61a;
+}
+/* Секция Номер */
+.call {
+    min-width: 320px;
+    height: 200px;
+    background-color: #ffc61a;
+}
+
+.call .block {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.call .block a {
+    font-size: 50px;
+    padding-top: 30px;
+    cursor: pointer;
+    color: black;
+}
+/* Футер */
+footer {
+    min-width: 320px;
+    height: 400px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+footer .left, footer .centre, footer .right {
+    color: white;
+    width: 320px;
+    height: 100%;
+}
+
+.hr {
+    border: 3px solid #ffc61a;
+    border-radius: 25px;
+}
+
+footer  img {
+    height: 25px;
+    cursor: pointer;
+}
+
+footer .android img, footer .ios img {
+    cursor: default;
+}
+
+footer .top {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+footer .top p {
+    padding: 40px 0px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+footer .text {
+    padding-bottom: 30px;
+}
+
+footer .left .img img {
+    padding-right: 15px;
+    height: 20px;
+}
+
+footer .android, footer .ios {
+    display: flex;
+    align-items: center;
+    color: #ffc61a;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+footer .android p, footer .ios p {
+    cursor: pointer;
+}
+
+footer .android p {
+    padding-right: 30px;
+}
+
+footer .ios p {
+    padding-right: 60px;
+}
+
+.local, .phone, .mail, .www {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.img p {
+    padding-left: 25px;
+}
+/* Секция Авторских Прав */
+.copyright {
+    min-width: 320px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1129px) { /* Секция Тариф */
+    .tariffs {
+        height: 100%;
+    }
+    .tariffs .text {
+        font-size: 35px;
+    }
+    .grid {
+        height: 450px;
+        grid-template-columns: 300px 300px 300px;
+        gap: 15px;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    .card {
+        height: 340px;
+        padding: 40px 30px;
+    }
+    .card_title {
+        font-size: 35px;
+    }
+    .pricing {
+        font-size: 60px;
+        padding: 18px 18px;
+    }
+    a.cta_btn {
+        border-radius: 27px;
+        padding: 18px 0;
+    }
+}
+
+@media (max-width: 1099px) { /* Секция С Заказом Такси */
+    .booking .left {
+        padding: 45px 25px;
+    }
+}
+
+@media (max-width: 999px) { /* Шапка, Футер */
+    nav {
+        width: 70%;
+    }
+    footer .top p {
+        padding: 20px 0px;
+        font-size: 20px;
+    }
+    .hr {
+        border: 2px solid #ffc61a;
+    }
+    footer .left, footer .centre, footer .right {
+        width: 220px;
+    }
+}
+
+@media (max-width: 959px) { /* Шапка, Секция Тариф */
+    .tel {
+        height: 185px;
+        padding: 55px 0px;
+    }
+    .tel p {
+        font-size: 23px;
+    }
+    .tel a {
+        font-size: 38px;
+    }
+    .car img {
+        height: 350px;
+    }
+    .grid {
+        height: 400px;
+        grid-template-columns: 300px 300px 300px;
+        gap: 10px;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    .card {
+        height: 300px;
+        padding: 40px 30px;
+    }
+    .card_title {
+        font-size: 30px;
+    }
+    .pricing {
+        font-size: 50px;
+        padding: 18px 18px;
+    }
+    .features {
+        margin: 0px;
+    }
+    a.cta_btn {
+        width: 100%;
+        border-radius: 27px;
+        padding: 18px 0;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 945px) { /* Секция Тариф */
+    .grid {
+        height: 300px;
+        grid-template-columns: 250px 250px 250px;
+        gap: 15px;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    .card {
+        height: 220px;
+        padding: 30px 20px;
+    }
+    .card_title {
+        font-size: 22px;
+    }
+    .pricing {
+        font-size: 40px;
+        padding: 10px 30px;
+    }
+    .features {
+        margin: 0px;
+    }
+    a.cta_btn {
+        width: 100%;
+        border-radius: 27px;
+        padding: 18px 0;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 893px) { /* Секция Бест*/
+    .best {
+        height: 100%;
+    }
+    .best img {
+        height: 23px;
+        border-radius: 20px 20px;
+        padding: 15px;
+        margin: 15px;
+    }
+    .home, .fast, .bonus, .gps {
+        width: 50%;
+    }
+    .text1 p:first-of-type {
+        font-size: 18px;
+        padding-bottom: 13px;
+    }
+    .text1 p:last-of-type {
+        font-size: 15px;
+    }
+    .best .push{
+        padding-top: 0px;
+        padding-bottom: 25px;
+    }
+    .best .push button {
+        padding: 7px 30px;
+        border-radius: 7px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 873px) { /* Секция Скачать, Секция Номер */
+    .download {
+        height: 100%;
+    }
+    .download .box {
+        flex-direction: column;
+    }
+    .download .right{
+       display: flex;
+       justify-content: center;
+    }
+    .download .right img {
+        height: 380px;
+    } 
+    .call .block {
+        height: 100%;
+        font-size: 25px;
+    }
+    .call .block a {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 860px) { /* Секция Клиент */
+    .client .text {
+        width: 355px;
+        padding-left: 0px;
+    }
+}
+
+@media (max-width: 844px) { /* Секция Клиент */
+    .client {
+        height: 100%;
+    }
+    .client .top {
+        padding-top: 45px;
+    }
+    .client .bottom {
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .client .left, .client .right {
+        width: 350px;
+        margin-bottom: 25px;
+    }
+    .client .name {
+        font-size: 22px;
+        color: #ffc61a;
+    }
+    .client .text {
+        width: 320px;
+        padding-left: 35px;
+    }
+}
+
+@media (max-width: 822px) { /* Секция С Заказом Такси */
+    .booking {
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .booking .left {
+        width: 450px;
+        padding: 100px 0px 45px 0px;
+    }
+    .booking .right {
+        width: 450px;
+        min-width: 320px;
+        padding-bottom: 30px;
+    }
+    .rightblock {
+        width: 100%;
+        height: 280px;
+        margin-top: 0px;
+    }
+    .booking .book {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 805px) { /* Секция Тариф */
+    .grid {
+        height: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+        gap: 15px;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    .card {
+        height: 230px;
+        padding: 30px 30px;
+    }
+    .card_title {
+        font-size: 25px;
+        text-align: center;
+    }
+    .pricing {
+        font-size: 50px;
+        padding: 10px;
+        text-align: center;
+    }
+    .features {
+        margin: 0px;
+    }
+    a.cta_btn {
+        width: 100%;
+        border-radius: 27px;
+        padding: 15px 0;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 787px) { /* Секция Бест*/
+    .best .top {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 0px;
+    }
+    .best .bottom {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 0px;
+        padding-bottom: 20px;
+    }
+    .home, .fast, .bonus, .gps {
+        width: 100%;
+        padding: 15px 0px;
+    }
+}
+
+@media (max-width: 739px) { /* Секция Номер, Футер */
+    .call .block {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .call .block a {
+        font-size: 33px;
+    }
+    footer {
+        height: 100%;
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+    footer .left, footer .centre, footer .right {
+        width: 290px;
+    }
+}
+
+@media (max-width: 719px) { /* Бургер Меню*/
+    nav {
+        display: none;
+        flex-direction: column;
+        position:absolute;
+        right: 10px;
+        top: 85px;
+        width: 100%;
+        min-width: 50%;
+        max-width: 285px;
+        height: 400px;
+        background-color: #0000008f;
+        border: 1px solid #ffc61a;
+        border-radius: 20px 20px;
+        font-size: 20px;
+    }
+    .burger {
+        display: block;
+    }
+    svg {
+        height: 40px;
+        width: 60px;
+        margin-right: 10px;
+        stroke: rgb(255, 255, 255);
+        cursor: pointer;
+    }
+    svg:hover {
+        background-color: #ffc61a;
+        border-radius: 15px;
+        stroke: black;
+    }
+}
+
+@media (max-width: 639px) { /* Шапка */
+    .tel p {
+        font-size: 20px;
+    }
+    .tel a {
+        font-size: 30px;
+    }
+    .car {
+        padding-top: 55px;
+    }
+    .car img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 589px) { /* Секция Номер */
+    .call .block {
+        white-space: pre-wrap;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .call .block a {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 539px) { /* Шапка */
+    .car {
+        padding-top: 90px;
+    }
+    .car img {
+        height: 255px;
+    }
+}
+
+@media (max-width: 512px) { /* Секция Скачать */
+    .download .left {
+        padding-bottom: 30px;
+    }
+    .download .img {
+        width: 245px;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .download .img img {
+        padding: 10px 0px;
+    }
+}
+
+@media (max-width: 489px) { /* Секция С Заказом Такси */
+    .booking .left {
+        width: 300px;
+        padding: 90px 0px 45px 0px;
+    }
+    .booking .topleft {
+        width: 300px;
+        font-size: 20px;
+    }
+    .booking .topleft p:last-of-type {
+        font-size: 25px;
+    }
+    .booking .left p {
+        width: 300px;
+    }
+    .booking .right {
+        width: 300px;
+    }
+    .rightblock {
+        width: 300px;
+        height: 270px;
+    }
+    .booking .book {
+        font-size: 18px;
+    }
+    .booking .left .push {
+        margin-left: auto;
+        font-size: 18px;
+        height: 30px;
+    }
+    .booking .push button {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 459px) { /* Шапка */
+    header {
+        height: 470px;
+    }
+    .car {
+        padding-top: 70px;
+    }
+    .car img {
+        height: 200px;
+    }
+    .logo img {
+        width: 130px;
+        height: 30px;
+    }
+    .logo p {
+        padding-top: 5px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 399px) { /* Секция Клиент, Секция Номер */
+    .client .top {
+        height: 100px;
+        font-size: 18px;
+        padding-top: 60px;
+    }
+    .client .left, .client .right {
+        width: 300px;
+    }
+    .client .text {
+        width: 250px;
+        padding-left: 0px;
+    }
+    .client .name {
+        font-size: 25px;
+    }
+    .call .block {
+        font-size: 15px;
+    }
+    .call .block a {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 369px) { /* Шапка, Секция С Заказом Такси */
+    header {
+        height: 430px;
+    }
+    .tel {
+        height: 185px;
+        padding: 50px 0px 15px 0px;
+    }
+    .tel p {
+        font-size: 17px;
+    }
+    .tel a {
+        font-size: 27px;
+    }
+    .car {
+        padding-top: 90px;
+    }
+    .car img {
+        height: 180px;
+    }
+    /* .logo img {
+        width: 140px;
+        height: 35px;
+    }
+    .logo p {
+        padding-top: 5px;
+        font-size: 12px;
+    } */
+}
+
+@media (max-width: 360px) { /* Секция Скачать */
+    .download .right img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 349px) { /* Секция С Заказом Такси */
+    .booking .left {
+        padding-top: 70px;
+    }
+}
+
+@media (max-width: 337px) { /* Секция Тариф, Футер */
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 290px));
+    }
+    .card {
+        padding: 25px 30px;
+    }
+    .card_title {
+        font-size: 22px;
+    }
+    .pricing {
+        font-size: 35px;
+    }
+    footer .text {
+        font-size: 14px;
+        padding-bottom: 30px;
+    }
+    footer .top p {
+        font-size: 18px;
+    }
+}
