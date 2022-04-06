@@ -9,7 +9,7 @@ html {
 .header a {
     text-decoration: none; 
     color: #2fe670;
-    font-family: 'Bebas Neue', cursive;
+    /* font-family: 'Bebas Neue', cursive; */
 }
 /* эксперемент с фоном */
 body {
@@ -282,6 +282,7 @@ body {
 .infoTop {
     display: flex;
     font-weight: bold;
+    flex-wrap: wrap;
     font-size: 22px;
     padding-bottom: 10px;
 }
@@ -292,6 +293,7 @@ body {
 
 .infoBotton {
     display: flex;
+    flex-wrap: wrap;
     font-size: 17px;
 }
 
@@ -357,8 +359,24 @@ body {
     content: ' screen,';
 }
 
+.productItSelf .screenResolutionL::after {
+    content: ' IPS,';
+}
+
+.productItSelf .processorBaseFrequency::after {
+    content: ' MHz,';
+}
+
 .productItSelf .totalStorageCapacity::after {
     content: 'GB flash memory,';
+}
+
+.productItSelf .totalStorageCapacityL::after {
+    content: 'GB, ';
+}
+
+.productItSelf .graphicsAdapter::before {
+    content: 'graphics adapter: ';
 }
 
 .productItSelf .camera::after {
@@ -563,6 +581,11 @@ body {
     .previewList {
         margin-left: 0px;
     }
+    .productsList {
+        width: 98%;
+        margin-left: 0px;
+        margin: 0px 10px;
+    }
     .sliderContainer {
         width: 800px;
         height: 55px;
@@ -606,6 +629,17 @@ body {
     .headerInput {
         width: 70%;
     }
+    .product {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .productInfo {
+        margin-top: 10px;
+    }
+    .pListPrice, .price {
+        padding-top: 15px;
+    }
     .sliderContainer {
         margin-top: 30px;
         margin-bottom: 10px;
@@ -615,6 +649,30 @@ body {
     }
     .footerContainer {
         justify-content: space-evenly;
+    }
+}
+
+@media (max-width: 579px) {
+    .productHeader {
+        flex-wrap: wrap;
+        border-top: 2px solid rgb(255, 255, 255);
+        height: auto;
+    }
+    .productHeader div {
+        width: auto;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 549px) {
+    .productInfo {
+        height: auto;
+    }
+    .productsList {
+        width: auto;
+        min-width: 290px;
+        margin-left: 0px;
+        margin: 0px 10px;
     }
 }
 

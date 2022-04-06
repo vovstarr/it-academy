@@ -83,21 +83,25 @@ function laptops() {
      
     productsLaptops.forEach(function(value, index) {
 
-        let product = document.createElement('li');      product.classList.add('product');
-        let productInfo = document.createElement('div'); productInfo.classList.add('productInfo');
-        let infoTop = document.createElement('div');     infoTop.classList.add('infoTop');
-        let infoBotton = document.createElement('div');  infoBotton.classList.add('infoBotton');
-        let img = document.createElement('img');         img.classList.add('imgLaptops');
-        let name = document.createElement('div');        name.classList.add('name');
-        let model = document.createElement('div');       model.classList.add('model');
-        let year = document.createElement('div');        year.classList.add('year');
-        let price = document.createElement('div');       price.classList.add('pListPrice');  
-        let screenSize = document.createElement('div');  screenSize.classList.add('screenSize');
-        let screenResolution = document.createElement('div');
+        let product = document.createElement('li');                   product.classList.add('product');
+        let productInfo = document.createElement('div');              productInfo.classList.add('productInfo');
+        let infoTop = document.createElement('div');                  infoTop.classList.add('infoTop');
+        let infoBotton = document.createElement('div');               infoBotton.classList.add('infoBotton');
+        let img = document.createElement('img');                      img.classList.add('imgLaptops');
+        let name = document.createElement('div');                     name.classList.add('name');
+        let model = document.createElement('div');                    model.classList.add('model');
+        let year = document.createElement('div');                     year.classList.add('year');
+        let price = document.createElement('div');                    price.classList.add('pListPrice');  
+        let screenSize = document.createElement('div');               screenSize.classList.add('screenSize');
+        let screenResolution = document.createElement('div');         screenResolution.classList.add('screenResolutionL');
         let processorModel = document.createElement('div');
-        let processorBaseFrequency = document.createElement('div');
-        let graphicsAdapter = document.createElement('div');
-        let article = document.createElement('div');     article.classList.add('article');
+        let processorBaseFrequency = document.createElement('div');   processorBaseFrequency.classList.add('processorBaseFrequency');
+        let graphicsAdapter = document.createElement('div');          graphicsAdapter.classList.add('graphicsAdapter');
+        let article = document.createElement('div');                  article.classList.add('article');
+        let systemMemory = document.createElement('div');             systemMemory.classList.add('systemMemory');
+        let storageType = document.createElement('div');              storageType.classList.add('storageType');
+        let totalStorageCapacity = document.createElement('div');     totalStorageCapacity.classList.add('totalStorageCapacityL');
+        let country = document.createElement('div');                  country.classList.add('country');
 
         img.src = productsLaptops[index].url; 
         name.innerHTML = productsLaptops[index].name;
@@ -110,6 +114,10 @@ function laptops() {
         processorBaseFrequency.innerHTML = productsLaptops[index].processorBaseFrequency;
         graphicsAdapter.innerHTML = productsLaptops[index].graphicsAdapter;
         article.innerHTML = productsLaptops[index].article;
+        systemMemory.innerHTML = productsLaptops[index].systemMemory;
+        storageType.innerHTML = productsLaptops[index].storageType;
+        totalStorageCapacity.innerHTML = productsLaptops[index].totalStorageCapacity;
+        country.innerHTML = productsLaptops[index].country;
     
         productContainer.append(product);
         product.append(img, productInfo, price);
@@ -124,7 +132,9 @@ function laptops() {
             let productItSelf = document.createElement('div');    productItSelf.className = 'productItSelf';
             
             productsList.appendChild(productItSelf);
-            productItSelf.append(img, name, model, year, price);
+            infoTop.append(name, model, year, article);
+            infoBotton.append(screenSize, screenResolution, processorModel, processorBaseFrequency, systemMemory, storageType, totalStorageCapacity, graphicsAdapter);
+            productItSelf.append(img, infoTop, infoBotton, price, country);
         }
 
         product.addEventListener('click', theProductItSelf);
@@ -536,7 +546,6 @@ buttonPhones.addEventListener('click', phones);
 function asidemenu() {
     previewList.style.display = 'none';
     productsList.style.display = 'flex';
-    productsList.style.width = '75%';
     sliderContainer.style.display = 'none';
     footer.style.display = 'none';
     wrapper.style.height = 'auto';
