@@ -1,0 +1,650 @@
+/* * {
+    outline: 1px solid red;
+} */
+
+html {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.header a {
+    text-decoration: none; 
+    color: #2fe670;
+    font-family: 'Bebas Neue', cursive;
+}
+/* эксперемент с фоном */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    position: absolute;
+    width: 100%;
+    min-width: 290px;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgb(2, 0, 1) 0%, rgb(2, 29, 23) 55%, rgba(2,0,.6,1) 100%);
+}
+
+.box div {
+    position: absolute;
+    background-color: transparent;
+    opacity: 0.1;
+    z-index: 1;
+    font-size: 30px;
+    color: rgb(11, 161, 124);
+    font-weight: bold;
+    text-align: center;
+}
+
+.box div:nth-child(1) {
+    top: 27%;
+    left: 90%;
+    animation: animate 10s linear infinite;
+}
+
+.box div:nth-child(2) {
+    top: 80%;
+    left: 97%;
+    animation: animate 7s linear infinite;
+}
+
+.box div:nth-child(3) {
+    top: 30%;
+    left: 5%;
+    animation: animate 8s linear infinite;
+}
+
+.box div:nth-child(4) {
+    top: 15%;
+    left: 97%;
+    animation: animate 8s linear infinite;
+}
+
+.box div:nth-child(5) {
+    top: 65%;
+    left: 3%;
+    animation: animate 10s linear infinite;
+}
+
+.box div:nth-child(6) {
+    top: 55%;
+    left: 89%;
+    animation: animate 13s linear infinite;
+}
+
+.box div:nth-child(7) {
+    top: 50%;
+    left: 95%;
+    animation: animate 9s linear infinite;
+}
+
+.box div:nth-child(8) {
+    top: 32%;
+    left: 20%;
+    animation: animate 17s linear infinite;
+}
+
+.box div:nth-child(9) {
+    top: 79%;
+    left: 10%;
+    animation: animate 7s linear infinite;
+}
+
+.box div:nth-child(10) {
+    top: 40%;
+    left: 10%;
+    animation: animate 16s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(0.9) translateY(-45px) rotate(180deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1.2) translateY(-90px) rotate(360deg);
+        opacity: 0.1;
+    }
+}
+/* хедер */
+.header {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 290px;
+    height: 60px;
+    margin-bottom: 15px;
+    position: sticky;
+    z-index: 3;
+}
+
+.headerLogo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.headerInput {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    padding: 10px;
+}
+
+.input {
+    height: 25px;
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+}
+/* секция превью */
+.sectionMain {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    min-width: 310px;
+    margin-bottom: 20px;
+}
+
+.previewList {
+    width: 100%;
+    min-width: 310px;
+    margin-left: 15px;
+    z-index: 2;
+}
+
+.imgPreview {
+    width: 100%;
+    min-width: 300px;
+}
+/* кнопки меню */
+.aside {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 100%;
+    z-index: 2;
+    font-family: 'Mitr', sans-serif;
+}
+
+.category, .buttonLaptops, .buttonPhones, .buttonWatch, .buttonScreens, .buttonTV {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100px; */
+    font-size: 20px;
+    padding: 6px 0px;
+    margin-bottom: 5px;
+    height: 30px;
+    color: #29c275;
+} 
+
+.buttonLaptops:hover, .buttonPhones:hover, .buttonWatch:hover,  .buttonScreens:hover, .buttonTV:hover {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 5%, rgba(41, 194, 118, 0.76) 50%,rgba(41, 194, 118, 0) 95%);
+    color: white;
+    cursor: pointer;
+}
+
+.buttonLaptops:active, .buttonPhones:active, .buttonWatch:active, .buttonScreens:active, .buttonTV:active {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(41, 194, 117) 50%,rgba(41, 194, 118, 0) 100%);
+    color: black;
+    cursor: pointer;
+}
+/* Секции с товарами */
+.productsList {
+    display: none;
+    flex-direction: column;
+    min-width: 310px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    margin-left: 15px;
+    z-index: 2;
+}
+
+.productHeader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 290px;
+    height: 40px;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+.productHeader div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 18px;
+    color: #29c275;
+    opacity: 0.65;
+    font-family: 'Mitr', sans-serif;
+}
+
+.productHeader div:first-of-type {
+    cursor: auto;
+    opacity: 1;
+}
+
+.productHeader div:not(:first-child):hover {
+    opacity: 1;
+}
+/* продукты*/
+.productContainer {
+    padding: 0;
+    margin-top: 5px;
+}
+
+.productContainer li:not(:last-child){
+    margin: 0px 0px 5px 0px;
+}
+
+.product {
+    height: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: inset 1px 1px 3px black;
+    cursor: pointer;
+}
+
+.product:hover {
+    box-shadow: inset 2px 2px 10px black;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100px;
+    width: 70%;
+    font-size: 20px;
+}
+
+.infoTop {
+    display: flex;
+    font-weight: bold;
+    font-size: 22px;
+    padding-bottom: 10px;
+}
+
+.infoTop div {
+    padding-right: 7px;
+}
+
+.infoBotton {
+    display: flex;
+    font-size: 17px;
+}
+
+.infoBotton div {
+    padding-right: 5px;
+}
+
+.screenSize::after {
+    content: '"';
+}
+
+.pListPrice {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.pListPrice::after {
+    content: "$";
+}
+
+.price{
+    font-size: 23px;
+    font-weight: bold;
+}
+.totalStorageCapacity::after{
+    content: 'GB';
+}
+.systemMemory::after {
+    content: 'GB RAW,';
+}
+/* товар */
+.productItSelf .imgPhones {
+    width: 100%;
+    max-width: 250px;
+}
+.productItSelf .imgLaptops{
+    width: 100%;
+    max-width: 300px;
+}
+
+.productItSelf {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 15px;
+    height: auto;
+}
+
+.productItSelf .infoTop {
+    flex-wrap: wrap;
+    margin: 20px 0px 10px 0px; 
+}
+
+.productItSelf .infoBotton {
+    flex-wrap: wrap;
+}
+
+.productItSelf .platform::after, .productItSelf .processorModel::after {
+    content: ',';
+}
+
+.productItSelf .screenResolution::after {
+    content: ' screen,';
+}
+
+.productItSelf .totalStorageCapacity::after {
+    content: 'GB flash memory,';
+}
+
+.productItSelf .camera::after {
+    content: ' camera,';
+}
+
+.productItSelf .battery::after {
+    content: ' battery';
+}
+
+.productItSelf .pListPrice {
+    margin: 20px 0px;
+}
+
+.productItSelf .pListPrice::before {
+    content: 'Price: ';
+}
+
+.productItSelf .country {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.productItSelf .country::before {
+    content: 'Country: ';
+}
+/* слайдер */
+.sliderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 1300px;
+    height: 80px;
+    min-width: 290px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 3%, rgb(7, 136, 74) 50%,rgba(41, 194, 118, 0) 97%);
+}
+
+.slider {
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.sliderL div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0.9;
+    font-family: 'Mitr', sans-serif;
+}
+
+.sliderL {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 0;
+    transition: all cubic-bezier(0.59, 0.63, 0.58, 0.61) 3s;
+}
+/* футер */
+.footer {
+    display: flex;
+    margin: 0 auto;
+    min-width: 310px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 10%, rgb(0, 0, 0) 70%, rgb(0, 0, 0) 100%);
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 1200px;
+    min-width: 310px;
+    padding: 11px 10px 10px;
+}
+
+.sectionF {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    min-width: 290px;
+    height: 140px;
+    border-top: 2px solid rgba(41, 194, 117);
+    border-left: 2px solid rgba(41, 194, 117);
+    background: linear-gradient(135deg, rgba(41, 194, 118, 0.795) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 100%);
+}
+
+.sectionS {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    min-width: 290px;
+    height: 140px;
+    border-right: 2px solid rgba(41, 194, 117);
+    border-bottom: 2px solid rgba(41, 194, 117);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 70%, rgba(41, 194, 118, 0.767) 100%)
+}
+
+.about {
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.imgI, .imgT, .imgF, .imgG {
+    height: 30px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.contacts {
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.address {
+    font-size: 18px;
+    color: #29c275;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.tel {
+    text-decoration: none; 
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+}
+/* поисковая строка */
+.darknessWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.678);
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1349px) {
+    .sliderContainer {
+        width: 1150px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 1239px) {
+    .sliderContainer {
+        width: 1000px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 1029px) {
+    .sliderContainer {
+        width: 900px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 969px) {
+    .footerContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 929px) {
+    .sectionMain {
+        flex-direction: column;
+    }
+    .aside {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .buttonLaptops:hover, .buttonPhones:hover, .buttonWatch:hover,  .buttonScreens:hover, .buttonTV:hover {
+        background: none;
+    }
+    .buttonLaptops:active, .buttonPhones:active, .buttonWatch:active, .buttonScreens:active, .buttonTV:active {
+        background: none;
+        color: #ffffff;
+    }
+    .previewList {
+        margin-left: 0px;
+    }
+    .sliderContainer {
+        width: 800px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 824px) {
+    .sliderContainer {
+        width: 700px;
+        height: 55px;
+    }
+    .sliderL div {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 799px) {
+    .sliderContainer {
+        width: 550px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 704px) {
+    .sliderContainer {
+        width: 550px;
+        height: 35px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    
+}
+
+@media (max-width: 649px) {
+    .header {
+        flex-direction: column;
+        height: 45px;
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+    .headerInput {
+        width: 70%;
+    }
+    .sliderContainer {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    .sliderL div {
+        font-size: 33px;
+    }
+    .footerContainer {
+        justify-content: space-evenly;
+    }
+}
+
+@media (max-width: 519px) {
+    #wrapper {
+        height: 100%;
+    }
+    .aside {
+        flex-wrap: wrap;
+    }
+    .aside div {
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 469px) {
+    .footerContainer {
+        padding: 5px;
+    }
+    .sectionF, .sectionS {
+        width: 300px;
+    }
+}
+
+@media (max-width: 320px) {
+    .sliderContainer {
+        width: 300px;
+        height: 30px;
+    }
+    .sliderL div {
+        font-size: 25px;
+    }
+}
