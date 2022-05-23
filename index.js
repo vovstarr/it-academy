@@ -1,5 +1,6 @@
-import  { productsLaptops } from './catalog.js';
-import  { productsPhones }  from './catalog.js';
+import { productsLaptops, productsPhones, productsSmartWatch, productsDisplay, productsTV } from './catalog.js';
+import { autoSlider } from './slider.js'
+
 
 let wrapper = document.getElementById('wrapper');
 // фон
@@ -62,26 +63,140 @@ header.append(logo, input);
 sectionMain.append(aside, previewList, productsList);
 aside.append(category, buttonLaptops, buttonPhones, buttonWatch, buttonScreens, buttonTV);
 
-//страница с ноут
-function laptops() {
-    productsList.innerHTML = '';
-
-    let productHeader = document.createElement('div');     productHeader.classList.add('productHeader');
-    productsList.appendChild(productHeader);
-     
-    let productContainer = document.createElement('ul');   productContainer.classList.add('productContainer');
-    productsList.appendChild(productContainer);
+//хедер для сортировки 
+function createProductHeader() {
     
+    let productHeader = document.createElement('div');     productHeader.classList.add('productHeader');
     //кнопушки для сортировки
-     productHeader.innerHTML = `
-        <div class="bottonSorting">Sorting By:</div>
-        <div class="sortPS">Price ⇪</div>
-        <div class="sortPB">Price ⇩</div>
-        <div class="sortSS">Screen ⇪</div>
-        <div class="sortSB">Screen ⇩</div>
-     `; 
-     
-    productsLaptops.forEach(function(value, index) {
+    productHeader.innerHTML = `
+    <div class="bottonSorting">Sorting By:</div>
+    <div class="sortPS">Price ⇪</div>
+    <div class="sortPB">Price ⇩</div>
+    <div class="sortSS">Screen ⇪</div>
+    <div class="sortSB">Screen ⇩</div>
+    `; 
+    
+    return productHeader;
+}
+//сортировка по цене
+function sortPS(temp, productContainer, productsList, productHeader) {
+    temp.sort((a, b) => a.price > b.price ? -1 : 1); 
+    productContainer = fillingTheClockArray(temp);
+    productsList.innerHTML = '';
+    productsList.append(productHeader, productContainer);
+}
+
+function sortPB(temp, productContainer, productsList, productHeader) {
+    temp.sort((a, b) => a.price < b.price ? -1 : 1); 
+    productContainer = fillingTheClockArray(temp);
+    productsList.innerHTML = '';
+    productsList.append(productHeader, productContainer);
+}
+//сортировка по размеру экрана
+function sortSS(temp, productContainer, productsList, productHeader) {
+    temp.sort((a, b) => a.screenSize > b.screenSize ? -1 : 1); 
+    productContainer = fillingTheClockArray(temp);
+    productsList.innerHTML = '';
+    productsList.append(productHeader, productContainer);
+}
+
+function sortSB(temp, productContainer, productsList, productHeader) {
+    temp.sort((a, b) => a.screenSize < b.screenSize ? -1 : 1); 
+    productContainer = fillingTheClockArray(temp);
+    productsList.innerHTML = '';
+    productsList.append(productHeader, productContainer);
+}
+//массивы товаров
+function laptops() {
+    const temp = JSON.parse(JSON.stringify(productsLaptops));
+    
+    let productContainer = fillingThelaptopsArray(temp);
+   
+    productsList.innerHTML = '';
+        
+    let productHeader = createProductHeader();
+    
+    productsList.append(productHeader, productContainer);
+    
+    document.querySelector('.sortPS').addEventListener('click', () => {sortPS(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortPB').addEventListener('click', () => {sortPB(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortSS').addEventListener('click', () => {sortSS(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortSB').addEventListener('click', () => {sortSB(temp, productContainer, productsList, productHeader)});   
+}
+
+function phones() {
+    const temp = JSON.parse(JSON.stringify(productsPhones));
+    
+    let productContainer = fillingThephonesArray(temp);
+   
+    productsList.innerHTML = '';
+        
+    let productHeader = createProductHeader();
+    
+    productsList.append(productHeader, productContainer);
+    
+    document.querySelector('.sortPS').addEventListener('click', () => {sortPS(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortPB').addEventListener('click', () => {sortPB(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortSS').addEventListener('click', () => {sortSS(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortSB').addEventListener('click', () => {sortSB(temp, productContainer, productsList, productHeader)}); 
+}
+
+function smartWatch() {
+    const temp = JSON.parse(JSON.stringify(productsSmartWatch));
+    
+    let productContainer = fillingTheClockArray(temp);
+   
+    productsList.innerHTML = '';
+        
+    let productHeader = createProductHeader();
+    
+    productsList.append(productHeader, productContainer);
+    
+    document.querySelector('.sortPS').addEventListener('click', () => {sortPS(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortPB').addEventListener('click', () => {sortPB(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortSS').addEventListener('click', () => {sortSS(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortSB').addEventListener('click', () => {sortSB(temp, productContainer, productsList, productHeader)}); 
+}
+
+function display() {
+    const temp = JSON.parse(JSON.stringify(productsDisplay));
+    
+    let productContainer = fillingTheDisplayArray(temp);
+   
+    productsList.innerHTML = '';
+        
+    let productHeader = createProductHeader();
+    
+    productsList.append(productHeader, productContainer);
+   
+    document.querySelector('.sortPS').addEventListener('click', () => {sortPS(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortPB').addEventListener('click', () => {sortPB(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortSS').addEventListener('click', () => {sortSS(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortSB').addEventListener('click', () => {sortSB(temp, productContainer, productsList, productHeader)}); 
+}
+
+function TV() {
+    const temp = JSON.parse(JSON.stringify(productsTV));
+    
+    let productContainer = fillingTheTVArray(temp);
+   
+    productsList.innerHTML = '';
+        
+    let productHeader = createProductHeader();
+    
+    productsList.append(productHeader, productContainer);
+   
+    document.querySelector('.sortPS').addEventListener('click', () => {sortPS(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortPB').addEventListener('click', () => {sortPB(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortSS').addEventListener('click', () => {sortSS(temp, productContainer, productsList, productHeader)});
+    document.querySelector('.sortSB').addEventListener('click', () => {sortSB(temp, productContainer, productsList, productHeader)}); 
+}
+
+//заполнение массива ноутбуков
+function fillingThelaptopsArray(temp) {
+    let productContainer = document.createElement('ul');   productContainer.classList.add('productContainer');
+   
+    temp.forEach(function(value, index) {
 
         let product = document.createElement('li');                   product.classList.add('product');
         let productInfo = document.createElement('div');              productInfo.classList.add('productInfo');
@@ -103,21 +218,21 @@ function laptops() {
         let totalStorageCapacity = document.createElement('div');     totalStorageCapacity.classList.add('totalStorageCapacityL');
         let country = document.createElement('div');                  country.classList.add('country');
 
-        img.src = productsLaptops[index].url; 
-        name.innerHTML = productsLaptops[index].name;
-        model.innerHTML = productsLaptops[index].model;
-        year.innerHTML = productsLaptops[index].year;
-        price.innerHTML = productsLaptops[index].price;
-        screenSize.innerHTML = productsLaptops[index].screenSize;
-        screenResolution.innerHTML = productsLaptops[index].screenResolution;
-        processorModel.innerHTML = productsLaptops[index].processorModel;
-        processorBaseFrequency.innerHTML = productsLaptops[index].processorBaseFrequency;
-        graphicsAdapter.innerHTML = productsLaptops[index].graphicsAdapter;
-        article.innerHTML = productsLaptops[index].article;
-        systemMemory.innerHTML = productsLaptops[index].systemMemory;
-        storageType.innerHTML = productsLaptops[index].storageType;
-        totalStorageCapacity.innerHTML = productsLaptops[index].totalStorageCapacity;
-        country.innerHTML = productsLaptops[index].country;
+        img.src = temp[index].url; 
+        name.innerHTML = temp[index].name;
+        model.innerHTML = temp[index].model;
+        year.innerHTML = temp[index].year;
+        price.innerHTML = temp[index].price;
+        screenSize.innerHTML = temp[index].screenSize;
+        screenResolution.innerHTML = temp[index].screenResolution;
+        processorModel.innerHTML = temp[index].processorModel;
+        processorBaseFrequency.innerHTML = temp[index].processorBaseFrequency;
+        graphicsAdapter.innerHTML = temp[index].graphicsAdapter;
+        article.innerHTML = temp[index].article;
+        systemMemory.innerHTML = temp[index].systemMemory;
+        storageType.innerHTML = temp[index].storageType;
+        totalStorageCapacity.innerHTML = temp[index].totalStorageCapacity;
+        country.innerHTML = temp[index].country;
     
         productContainer.append(product);
         product.append(img, productInfo, price);
@@ -131,7 +246,7 @@ function laptops() {
         
             let productItSelf = document.createElement('div');    productItSelf.className = 'productItSelf';
             
-            productsList.appendChild(productItSelf);
+            productsList.append(productItSelf);
             infoTop.append(name, model, year, article);
             infoBotton.append(screenSize, screenResolution, processorModel, processorBaseFrequency, systemMemory, storageType, totalStorageCapacity, graphicsAdapter);
             productItSelf.append(img, infoTop, infoBotton, price, country);
@@ -139,165 +254,14 @@ function laptops() {
 
         product.addEventListener('click', theProductItSelf);
     });
-    //сортировка по убыванию price
-    function sortByPS(arr) {
-        const temp = JSON.parse(JSON.stringify(arr));
-    
-        temp.sort((a, b) => a.price > b.price ? -1 : 1);
-    
-        productContainer.innerHTML = '';
-    
-        temp.forEach(({url, name, model, screenSize, screenResolution, year, price, article, processorModel, processorBaseFrequency, graphicsAdapter}) => {
-            productContainer.innerHTML += `
-            <li class="product">
-                <img class="imgLaptops" src="${url}"/>   
-                <div class="productInfo">
-                    <div class="infoTop">
-                        <div class="name">${name}</div>
-                        <div class="model">${model}</div>
-                        <div class="year">${year}</div>
-                        <div class="article">${article}</div>
-                    </div>
-                    <div class="infoBotton">
-                        <div class="screenSize">${screenSize}</div>
-                        <div class="screenResolution">${screenResolution}</div>
-                        <div class="processorModel">${processorModel}</div>
-                        <div class="processorBaseFrequency">${processorBaseFrequency}</div>
-                        <div class="graphicsAdapter">${graphicsAdapter}</div>
-                    </div>
-                </div>
-                <div class="price">${price}$</div>
-            </li>
-            `;
-        }) 
-    }
-    //сортировка по возрастанию price
-    function sortByPB(arr) {
-        const temp = JSON.parse(JSON.stringify(arr));
-    
-        temp.sort((a, b) => a.price < b.price ? -1 : 1);
-    
-        productContainer.innerHTML = '';
-    
-        temp.forEach(({url, name, model, screenSize, screenResolution, year, price, article, processorModel, processorBaseFrequency, graphicsAdapter}) => {
-            productContainer.innerHTML += `
-            <li class="product">
-                <img class="imgLaptops" src="${url}"/>   
-                <div class="productInfo">
-                    <div class="infoTop">
-                        <div class="name">${name}</div>
-                        <div class="model">${model}</div>
-                        <div class="year">${year}</div>
-                        <div class="article">${article}</div>
-                    </div>
-                    <div class="infoBotton">
-                        <div class="screenSize">${screenSize}</div>
-                        <div class="screenResolution">${screenResolution}</div>
-                        <div class="processorModel">${processorModel}</div>
-                        <div class="processorBaseFrequency">${processorBaseFrequency}</div>
-                        <div class="graphicsAdapter">${graphicsAdapter}</div>
-                    </div>
-                </div>
-                <div class="price">${price}$</div>
-            </li>
-            `;
-        }) 
-    }
-    //сортировка по убыванию screen size
-    function sortBySS(arr) {
-       
-        const temp = JSON.parse(JSON.stringify(arr));
-    
-        temp.sort((a, b) => a.screenSize > b.screenSize ? -1 : 1);
-    
-        productContainer.innerHTML = '';
-    
-        temp.forEach(({url, name, model, screenSize, screenResolution, year, price, article, processorModel, processorBaseFrequency, graphicsAdapter}) => {
-            productContainer.innerHTML += `
-            <li class="product">
-                <img class="imgLaptops" src="${url}"/>   
-                <div class="productInfo">
-                    <div class="infoTop">
-                        <div class="name">${name}</div>
-                        <div class="model">${model}</div>
-                        <div class="year">${year}</div>
-                        <div class="article">${article}</div>
-                    </div>
-                    <div class="infoBotton">
-                        <div class="screenSize">${screenSize}</div>
-                        <div class="screenResolution">${screenResolution}</div>
-                        <div class="processorModel">${processorModel}</div>
-                        <div class="processorBaseFrequency">${processorBaseFrequency}</div>
-                        <div class="graphicsAdapter">${graphicsAdapter}</div>
-                    </div>
-                </div>
-                <div class="price">${price}$</div>
-            </li>
-            `;
-        }) 
-    
-    }
-    //сортировка по возрастанию screen size
-    function sortBySB(arr) {
-       
-        const temp = JSON.parse(JSON.stringify(arr));
-    
-        temp.sort((a, b) => a.screenSize < b.screenSize ? -1 : 1);
-    
-        productContainer.innerHTML = '';
-    
-        temp.forEach(({url, name, model, screenSize, screenResolution, year, price, article, processorModel, processorBaseFrequency, graphicsAdapter}) => {
-            productContainer.innerHTML += `
-            <li class="product">
-                <img class="imgLaptops" src="${url}"/>   
-                <div class="productInfo">
-                    <div class="infoTop">
-                        <div class="name">${name}</div>
-                        <div class="model">${model}</div>
-                        <div class="year">${year}</div>
-                        <div class="article">${article}</div>
-                    </div>
-                    <div class="infoBotton">
-                        <div class="screenSize">${screenSize}</div>
-                        <div class="screenResolution">${screenResolution}</div>
-                        <div class="processorModel">${processorModel}</div>
-                        <div class="processorBaseFrequency">${processorBaseFrequency}</div>
-                        <div class="graphicsAdapter">${graphicsAdapter}</div>
-                    </div>
-                </div>
-                <div class="price">${price}$</div>
-            </li>
-            `;
-        })  
-    }
 
-    document.querySelector('.sortPS').addEventListener('click', () => {sortByPS(productsLaptops)});
-    document.querySelector('.sortPB').addEventListener('click', () => {sortByPB(productsLaptops)});
-    document.querySelector('.sortSS').addEventListener('click', () => {sortBySS(productsLaptops)});
-    document.querySelector('.sortSB').addEventListener('click', () => {sortBySB(productsLaptops)});
-
-    
+    return productContainer;
 }
-//страница с тел
-function phones() {
-    productsList.innerHTML = '';
-
-    let productHeader = document.createElement('div');     productHeader.classList.add('productHeader');
-    productsList.appendChild(productHeader);
-     
+//заполнение массива телефонов
+function fillingThephonesArray(temp) {
     let productContainer = document.createElement('ul');   productContainer.classList.add('productContainer');
-    productsList.appendChild(productContainer);
     
-    //кнопушки для сортировки
-     productHeader.innerHTML = `
-        <div class="bottonSorting">Sorting By:</div>
-        <div class="sortPS">Price ⇪</div>
-        <div class="sortPB">Price ⇩</div>
-        <div class="sortSS">Screen ⇪</div>
-        <div class="sortSB">Screen ⇩</div>
-     `; 
-     
-    productsPhones.forEach(function(item, index) {
+    temp.forEach(function(item, index) {
          
         let product = document.createElement('li');                 product.classList.add('product');
         let productInfo = document.createElement('div');            productInfo.classList.add('productInfo');
@@ -320,22 +284,22 @@ function phones() {
         let battery = document.createElement('div');                battery.classList.add('battery');
         let country = document.createElement('div');                country.classList.add('country');
 
-        img.src = productsPhones[index].url;
-        name.innerHTML = productsPhones[index].name;
-        model.innerHTML = productsPhones[index].model;
-        year.innerHTML = productsPhones[index].year;
-        price.innerHTML = productsPhones[index].price;
-        screenSize.innerHTML = productsPhones[index].screenSize;
-        screenResolution.innerHTML = productsPhones[index].screenResolution;
-        type.innerHTML = productsPhones[index].type;
-        color.innerHTML = productsPhones[index].color;
-        totalStorageCapacity.innerHTML = productsPhones[index].totalStorageCapacity;
-        platform.innerHTML = productsPhones[index].platform;
-        processorModel.innerHTML = productsPhones[index].processorModel;
-        systemMemory.innerHTML = productsPhones[index].systemMemory;
-        camera.innerHTML = productsPhones[index].camera;
-        battery.innerHTML = productsPhones[index].battery;
-        country.innerHTML = productsPhones[index].country;
+        img.src = temp[index].url;
+        name.innerHTML = temp[index].name;
+        model.innerHTML = temp[index].model;
+        year.innerHTML = temp[index].year;
+        price.innerHTML = temp[index].price;
+        screenSize.innerHTML = temp[index].screenSize;
+        screenResolution.innerHTML = temp[index].screenResolution;
+        type.innerHTML = temp[index].type;
+        color.innerHTML = temp[index].color;
+        totalStorageCapacity.innerHTML = temp[index].totalStorageCapacity;
+        platform.innerHTML = temp[index].platform;
+        processorModel.innerHTML = temp[index].processorModel;
+        systemMemory.innerHTML = temp[index].systemMemory;
+        camera.innerHTML = temp[index].camera;
+        battery.innerHTML = temp[index].battery;
+        country.innerHTML = temp[index].country;
         
         productContainer.append(product);
         product.append(img, productInfo, price);
@@ -357,142 +321,183 @@ function phones() {
     
         product.addEventListener('click', theProductItSelf);
     });
-    //сортировка по убыванию price
-    function sortByPS(arr) {
-        const temp = JSON.parse(JSON.stringify(arr));
-    
-        temp.sort((a, b) => a.price > b.price ? -1 : 1);
-    
-        productContainer.innerHTML = '';
-    
-        temp.forEach(({url, type, name, model, color, totalStorageCapacity, screenSize, screenResolution, year, price}) => {
-            productContainer.innerHTML += `
-            <li class="product">
-                <img class="imgPhones" src="${url}"/>   
-                <div class="productInfo">
-                    <div class="infoTop">
-                        <div class="type">${type}</div>
-                        <div class="name">${name}</div>
-                        <div class="model">${model}</div>
-                        <div class="color">${color}</div>
-                        <div class="totalStorageCapacity">${totalStorageCapacity}</div>
-                    </div>
-                    <div class="infoBotton">
-                        <div class="screenSize">${screenSize}</div>
-                        <div class="screenResolution">${screenResolution}</div>
-                        <div class="year">${year}</div>
-                    </div>
-                </div>
-                <div class="price">${price}$</div>
-            </li>
-            `;
-        }) 
-    }
-    //сортировка по возрастанию price
-    function sortByPB(arr) {
-        const temp = JSON.parse(JSON.stringify(arr));
-    
-        temp.sort((a, b) => a.price < b.price ? -1 : 1);
-    
-        productContainer.innerHTML = '';
-    
-        temp.forEach(({url, type, name, model, color, totalStorageCapacity, screenSize, screenResolution, year, price}) => {
-            productContainer.innerHTML += `
-            <li class="product">
-                <img class="imgPhones" src="${url}"/>   
-                <div class="productInfo">
-                    <div class="infoTop">
-                        <div class="type">${type}</div>
-                        <div class="name">${name}</div>
-                        <div class="model">${model}</div>
-                        <div class="color">${color}</div>
-                        <div class="totalStorageCapacity">${totalStorageCapacity}</div>
-                    </div>
-                    <div class="infoBotton">
-                        <div class="screenSize">${screenSize}</div>
-                        <div class="screenResolution">${screenResolution}</div>
-                        <div class="year">${year}</div>
-                    </div>
-                </div>
-                <div class="price">${price}$</div>
-            </li>
-            `;
-        }) 
-    }
-    //сортировка по убыванию screen size
-    function sortBySS(arr) {
-       
-        const temp = JSON.parse(JSON.stringify(arr));
-    
-        temp.sort((a, b) => a.screenSize > b.screenSize ? -1 : 1);
-    
-        productContainer.innerHTML = '';
-    
-        temp.forEach(({url, type, name, model, color, totalStorageCapacity, screenSize, screenResolution, year, price}) => {
-            productContainer.innerHTML += `
-            <li class="product">
-                <img class="imgPhones" src="${url}"/>   
-                <div class="productInfo">
-                    <div class="infoTop">
-                        <div class="type">${type}</div>
-                        <div class="name">${name}</div>
-                        <div class="model">${model}</div>
-                        <div class="color">${color}</div>
-                        <div class="totalStorageCapacity">${totalStorageCapacity}</div>
-                    </div>
-                    <div class="infoBotton">
-                        <div class="screenSize">${screenSize}</div>
-                        <div class="screenResolution">${screenResolution}</div>
-                        <div class="year">${year}</div>
-                    </div>
-                </div>
-                <div class="price">${price}$</div>
-            </li>
-            `;
-        }) 
-    
-    }
-    //сортировка по возрастанию screen size
-    function sortBySB(arr) {
-       
-        const temp = JSON.parse(JSON.stringify(arr));
-    
-        temp.sort((a, b) => a.screenSize < b.screenSize ? -1 : 1);
-    
-        productContainer.innerHTML = '';
-    
-        temp.forEach(({url, type, name, model, color, totalStorageCapacity, screenSize, screenResolution, year, price}) => {
-            productContainer.innerHTML += `
-            <li class="product">
-                <img class="imgPhones" src="${url}"/>   
-                <div class="productInfo">
-                    <div class="infoTop">
-                        <div class="type">${type}</div>
-                        <div class="name">${name}</div>
-                        <div class="model">${model}</div>
-                        <div class="color">${color}</div>
-                        <div class="totalStorageCapacity">${totalStorageCapacity}</div>
-                    </div>
-                    <div class="infoBotton">
-                        <div class="screenSize">${screenSize}</div>
-                        <div class="screenResolution">${screenResolution}</div>
-                        <div class="year">${year}</div>
-                    </div>
-                </div>
-                <div class="price">${price}$</div>
-            </li>
-            `;
-        }) 
-    }
 
-    document.querySelector('.sortPS').addEventListener('click', () => {sortByPS(productsPhones)});
-    document.querySelector('.sortPB').addEventListener('click', () => {sortByPB(productsPhones)});
-    document.querySelector('.sortSS').addEventListener('click', () => {sortBySS(productsPhones)});
-    document.querySelector('.sortSB').addEventListener('click', () => {sortBySB(productsPhones)});
+    return productContainer;
 }
-// поискова строка
-function DarknessWrapper() {
+//заполнение массива часов
+function fillingTheClockArray(temp) {
+    let productContainer = document.createElement('ul');   productContainer.classList.add('productContainer');
 
+    temp.forEach(function(item, index) {
+         
+        let product = document.createElement('li');                 product.classList.add('product');
+        let productInfo = document.createElement('div');            productInfo.classList.add('productInfo');
+        let infoTop = document.createElement('div');                infoTop.classList.add('infoTop');
+        let infoBotton = document.createElement('div');             infoBotton.classList.add('infoBotton');
+        let img = document.createElement('img');                    img.classList.add('imgPhones');
+        let name = document.createElement('div');
+        let model = document.createElement('div');
+        let screenSize = document.createElement('div');             screenSize.classList.add('screenSize');
+        let year = document.createElement('div');
+        let price = document.createElement('div');                  price.classList.add('pListPrice');
+        let screenResolution = document.createElement('div');       screenResolution.classList.add('screenResolution');
+        let type = document.createElement('div');                   type.classList.add('type');
+        let color = document.createElement('div');                  color.classList.add('color');
+        let totalStorageCapacity = document.createElement('div');   totalStorageCapacity.classList.add('totalStorageCapacity');
+        let platform = document.createElement('div');               platform.classList.add('platform');
+        let systemMemory = document.createElement('div');           systemMemory.classList.add('systemMemory');
+        let battery = document.createElement('div');                battery.classList.add('battery');
+        let country = document.createElement('div');                country.classList.add('country');
+        let workingHours = document.createElement('div');           workingHours.classList.add('workingHours');
+
+        img.src = temp[index].url;
+        name.innerHTML = temp[index].name;
+        model.innerHTML = temp[index].model;
+        year.innerHTML = temp[index].year;
+        price.innerHTML = temp[index].price;
+        screenSize.innerHTML = temp[index].screenSize;
+        screenResolution.innerHTML = temp[index].screenResolution;
+        type.innerHTML = temp[index].type;
+        color.innerHTML = temp[index].color;
+        totalStorageCapacity.innerHTML = temp[index].totalStorageCapacity;
+        platform.innerHTML = temp[index].platform;
+        systemMemory.innerHTML = temp[index].systemMemory;
+        battery.innerHTML = temp[index].battery;
+        country.innerHTML = temp[index].country;
+        workingHours.innerHTML = temp[index].workingHours;
+        
+        productContainer.append(product);
+        product.append(img, productInfo, price);
+        productInfo.append(infoTop, infoBotton);
+        infoTop.append(type, name, model, color, totalStorageCapacity);
+        infoBotton.append(screenSize, screenResolution, year);
+        
+        function theProductItSelf() {
+            wrapper.style.height = '100%';
+            productsList.innerHTML = '';
+
+            let productItSelf = document.createElement('div');    productItSelf.classList.add('productItSelf');
+
+            productsList.append(productItSelf); 
+            productItSelf.append(img, infoTop, infoBotton, price, country);
+            infoTop.append(name, model, year, type, color);
+            infoBotton.append(platform, screenSize, screenResolution, systemMemory, totalStorageCapacity, battery, workingHours);
+        }
+    
+        product.addEventListener('click', theProductItSelf);
+    });
+
+    return productContainer;
+}
+//заполнение массива дисплеев
+function fillingTheDisplayArray(temp) {
+    let productContainer = document.createElement('ul');   productContainer.classList.add('productContainer');
+
+    temp.forEach(function(item, index) {
+         
+        let product = document.createElement('li');                   product.classList.add('product');
+        let productInfo = document.createElement('div');              productInfo.classList.add('productInfo');
+        let infoTop = document.createElement('div');                  infoTop.classList.add('infoTop');
+        let infoBotton = document.createElement('div');               infoBotton.classList.add('infoBotton');
+        let img = document.createElement('img');                      img.classList.add('imgLaptops');
+        let name = document.createElement('div');                     name.classList.add('name');
+        let price = document.createElement('div');                    price.classList.add('pListPrice');  
+        let screenSize = document.createElement('div');               screenSize.classList.add('screenSize');
+        let screenResolution = document.createElement('div');         screenResolution.classList.add('screenResolutionL');
+        let article = document.createElement('div');                  article.classList.add('article');
+        let country = document.createElement('div');                  country.classList.add('country');
+        let brightness = document.createElement('div');               brightness.classList.add('brightness');
+
+        img.src = temp[index].url; 
+        name.innerHTML = temp[index].name;
+        price.innerHTML = temp[index].price;
+        screenSize.innerHTML = temp[index].screenSize;
+        screenResolution.innerHTML = temp[index].screenResolution;
+        article.innerHTML = temp[index].article;
+        country.innerHTML = temp[index].country;
+        brightness.innerHTML = temp[index].brightness;
+    
+        productContainer.append(product);
+        product.append(img, productInfo, price);
+        productInfo.append(infoTop, infoBotton);
+        infoTop.append(name, article);
+        infoBotton.append(screenSize, screenResolution,);
+
+        function theProductItSelf() {
+            wrapper.style.height = '100%';
+            productsList.innerHTML = '';
+        
+            let productItSelf = document.createElement('div');    productItSelf.className = 'productItSelf';
+            
+            productsList.append(productItSelf);
+            infoTop.append(name, article);
+            infoBotton.append(brightness, screenSize, screenResolution);
+            productItSelf.append(img, infoTop, infoBotton, price, country);
+        }
+
+        product.addEventListener('click', theProductItSelf);
+    });
+
+    return productContainer;
+}
+//заполнение массива TV
+function fillingTheTVArray(temp) {
+    let productContainer = document.createElement('ul');   productContainer.classList.add('productContainer');
+
+    temp.forEach(function(item, index) {
+         
+        let product = document.createElement('li');                   product.classList.add('product');
+        let productInfo = document.createElement('div');              productInfo.classList.add('productInfo');
+        let infoTop = document.createElement('div');                  infoTop.classList.add('infoTop');
+        let infoBotton = document.createElement('div');               infoBotton.classList.add('infoBotton');
+        let img = document.createElement('img');                      img.classList.add('imgLaptops');
+        let name = document.createElement('div');                     name.classList.add('name');
+        let model = document.createElement('div');                    model.classList.add('model');
+        let year = document.createElement('div');                     year.classList.add('year');
+        let price = document.createElement('div');                    price.classList.add('pListPrice');  
+        let screenSize = document.createElement('div');               screenSize.classList.add('screenSize');
+        let screenResolution = document.createElement('div');         screenResolution.classList.add('screenResolutionL');
+        let article = document.createElement('div');                  article.classList.add('article');
+        let country = document.createElement('div');                  country.classList.add('country');
+        let platform = document.createElement('div');                 platform.classList.add('platform');
+
+        img.src = temp[index].url; 
+        name.innerHTML = temp[index].name;
+        model.innerHTML = temp[index].model;
+        year.innerHTML = temp[index].year;
+        price.innerHTML = temp[index].price;
+        screenSize.innerHTML = temp[index].screenSize;
+        screenResolution.innerHTML = temp[index].screenResolution;
+        article.innerHTML = temp[index].article;
+        country.innerHTML = temp[index].country;
+        platform.innerHTML = temp[index].platform;
+    
+        productContainer.append(product);
+        product.append(img, productInfo, price);
+        productInfo.append(infoTop, infoBotton);
+        infoTop.append(name, model, year, article);
+        infoBotton.append(screenSize, screenResolution,);
+
+        function theProductItSelf() {
+            wrapper.style.height = '100%';
+            productsList.innerHTML = '';
+        
+            let productItSelf = document.createElement('div');    productItSelf.className = 'productItSelf';
+            
+            productsList.append(productItSelf);
+            infoTop.append(name, model, year, article);
+            infoBotton.append(platform, screenSize, screenResolution);
+            productItSelf.append(img, infoTop, infoBotton, price, country);
+        }
+
+        product.addEventListener('click', theProductItSelf);
+    });
+
+    return productContainer;
+}
+
+//темная тема для поисковой строки
+function DarknessWrapper() {
     function exitDarknessWrapper() {
         darknessWrapper.style.display = 'none';
     }
@@ -540,8 +545,14 @@ footer.append(footerCon);
 // скрывает sectionMain
 buttonLaptops.addEventListener('click', asidemenu);
 buttonPhones.addEventListener('click', asidemenu);
+buttonWatch.addEventListener('click', asidemenu);
+buttonScreens.addEventListener('click', asidemenu);
+buttonTV.addEventListener('click', asidemenu);
 buttonLaptops.addEventListener('click', laptops);
 buttonPhones.addEventListener('click', phones);
+buttonWatch.addEventListener('click', smartWatch);
+buttonScreens.addEventListener('click', display);
+buttonTV.addEventListener('click', TV);
 
 function asidemenu() {
     previewList.style.display = 'none';
@@ -550,7 +561,8 @@ function asidemenu() {
     footer.style.display = 'none';
     wrapper.style.height = 'auto';
 }
-// попытка сделать слайдер
+
+//слайдер
 let slider = document.createElement('div');         slider.classList.add('slider');
 let sliderL = document.createElement('div');        sliderL.classList.add('sliderL');
 sliderContainer.append(slider);
@@ -577,22 +589,6 @@ sliderL.innerHTML += `
     <div>new</div>
     <div>new</div>
 `;
-
-let posit = 0;
-
-function autoSlider () {
-    let time;
-    time = setTimeout (function() {
-        const sliderLine = document.querySelector('.sliderL');
-        posit = posit + 100;
-        if (posit > 1200) {
-            posit = 0;
-            clearTimeout(time);
-        }
-        sliderLine.style.left = -posit + 'px';
-        autoSlider();
-    }, 1000);
-}
 
 autoSlider();
 
